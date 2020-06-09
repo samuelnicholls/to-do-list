@@ -1,0 +1,2 @@
+(this["webpackJsonpto-do-list"]=this["webpackJsonpto-do-list"]||[]).push([[0],{3:function(t,e,n){t.exports=n(9)},8:function(t,e,n){},9:function(t,e,n){"use strict";n.r(e);var o=n(0),l=n.n(o),r=n(2),a=n.n(r),c=(n(8),function(){return l.a.createElement("div",null,l.a.createElement("h1",null,"To Do List"))});a.a.render(l.a.createElement(l.a.StrictMode,null,l.a.createElement(c,null)),document.getElementById("root"))}},[[3,1,2]]]);
+//# sourceMappingURL=main.dada335a.chunk.js.map
