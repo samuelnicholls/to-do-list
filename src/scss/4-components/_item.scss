@@ -1,0 +1,81 @@
+$this: 'c-item' !global;
+
+.#{$this} {
+  display: flex;
+  align-items: center;
+
+  &--completed {
+    @extend .#{$this};
+    .#{$this}__circle {
+      background-color: $black;
+
+      &::before {
+        display: block;
+      }
+    }
+
+    .#{$this}__text {
+      text-decoration: line-through;
+      color: $grey;
+    }
+  }
+
+  &__circle {
+    background-color: $white;
+    border: 1px solid $black;
+    cursor: pointer;
+    position: relative;
+    height: 20px;
+    width: 10px;
+    margin-right: 20px;
+
+    &::before {
+      content: '';
+      border-bottom: 2px solid $white;
+      border-right: 2px solid $white;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 2px;
+      right: 8px;
+      width: 5px;
+      height: 11px;
+      display: none;
+    }
+  }
+
+  &__cross {
+    margin-left: auto;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: ' ';
+      background-color: $dark-grey;
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 2px;
+      height: 22px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__text {
+    font: {
+      size: 18px;
+      family: $font-regular;
+    }
+  }
+}
