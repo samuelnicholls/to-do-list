@@ -1,3 +1,4 @@
+/* stylelint-disable */
 /// HTML normalisation for browsers (not project specific)
 /// I've stripped out the comments, so they aren't compiled into CSS
 /// Any project specific normalisation rules should be added as scaffolding
@@ -203,3 +204,4 @@ template {
 figure {
   margin: 0;
 }
+/* stylelint-enable */

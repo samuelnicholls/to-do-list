@@ -14,20 +14,29 @@ export interface ItemProps {
 
 const Item = ({ item, index, items, setItems }: ItemProps) => {
   const completeItem = (index: number) => (event: any) => {
+    // Spreading the current items state
     const newItems = [...items]
 
+    // If the item has the completed field set to true
     if (item.completed === true) {
+      // Only get the one value based on the index passed and set the completed field to false
       newItems[index].completed = false
+      // Set the items state based on the new changes
       setItems(newItems)
     } else {
+      // Only get the one value based on the index passed and set the completed field to true
       newItems[index].completed = true
+      // Set the items state based on the new changes
       setItems(newItems)
     }
   }
 
   const removeItem = (index: number) => (event: any) => {
+    // Spreading the current items state
     const newItems = [...items]
+    // Only get the one value based on the index passed through
     newItems.splice(index, 1)
+    // Set the items state based on the new changes
     setItems(newItems)
   }
 

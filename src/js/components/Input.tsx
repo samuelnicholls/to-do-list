@@ -13,19 +13,26 @@ export interface InputProps {
 }
 
 const Input = ({ value, items, setValue, setItems }: InputProps) => {
-  const addItem = (text: any) => {
+  const addItem = (text: string) => {
+    // Spreading the current state and adding the new value in
     const newItems = [...items, { text }] as []
+    // Setting the item state to the newItems
     setItems(newItems)
   }
 
   const handleSubmit = (event: any) => {
+    // Preventing the default action of a button
     event.preventDefault()
+    // If there is no value on submit then don't do anything
     if (!value) return
+    // Calling the addItem function and passing it the value from the input
     addItem(value)
+    // Resetting the input field to just an empty string
     setValue('')
   }
 
   const onChange = (event: any) => {
+    // Set the value state to whatever the user has typed
     setValue(event.target.value)
   }
 

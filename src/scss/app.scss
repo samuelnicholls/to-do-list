@@ -1,12 +1,15 @@
+// 0 - Core
 @import '0-core/breakpoints';
 @import '0-core/vendor';
 
-@import '1-base/normalisation';
+// 1 - Base
 @import '1-base/colours';
+@import '1-base/normalisation';
 @import '1-base/typopgraphy';
 
-@import '4-components/form';
-@import '4-components/heading';
-@import '4-components/input';
-@import '4-components/item';
-@import '4-components/list';
+// 2 - Components
+@import '2-components/form';
+@import '2-components/heading';
+@import '2-components/input';
+@import '2-components/item';
+@import '2-components/list';

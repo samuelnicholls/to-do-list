@@ -3,7 +3,7 @@ $this: 'c-list' !global;
 .#{$this} {
   display: grid;
   row-gap: 10px;
-  margin: 0 auto;
-  padding: 20px;
   max-width: 500px;
+  padding: 20px;
+  margin: 0 auto;
 }

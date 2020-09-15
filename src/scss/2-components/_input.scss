@@ -1,8 +1,8 @@
 $this: 'c-input' !global;
 
 .#{$this} {
-  font-family: $font-regular;
-  border: 1px solid $black;
   width: 100%;
   padding: 10px;
+  font-family: $FONT_REGULAR;
+  border: 1px solid $BLACK;
 }

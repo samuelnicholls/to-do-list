@@ -7,7 +7,7 @@ $this: 'c-item' !global;
   &--completed {
     @extend .#{$this};
     .#{$this}__circle {
-      background-color: $black;
+      background-color: $BLACK;
 
       &::before {
         display: block;
@@ -15,52 +15,53 @@ $this: 'c-item' !global;
     }
 
     .#{$this}__text {
+      color: $GREY;
       text-decoration: line-through;
-      color: $grey;
     }
   }
 
   &__circle {
-    background-color: $white;
-    border: 1px solid $black;
-    cursor: pointer;
     position: relative;
-    height: 20px;
     width: 10px;
+    height: 20px;
     margin-right: 20px;
+    background-color: $WHITE;
+    border: 1px solid $BLACK;
+    cursor: pointer;
 
     &::before {
-      content: '';
-      border-bottom: 2px solid $white;
-      border-right: 2px solid $white;
-      transform: rotate(45deg);
+      display: none;
       position: absolute;
       top: 2px;
       right: 8px;
       width: 5px;
       height: 11px;
-      display: none;
+      border-right: 2px solid $WHITE;
+      border-bottom: 2px solid $WHITE;
+      transform: rotate(45deg);
+      content: '';
     }
   }
 
   &__cross {
-    margin-left: auto;
+    position: relative;
     width: 22px;
     height: 22px;
-    position: relative;
     padding: 0;
+    margin-left: auto;
+    background-color: transparent;
     border: none;
     cursor: pointer;
 
     &::before,
     &::after {
-      content: ' ';
-      background-color: $dark-grey;
       position: absolute;
       top: 0;
       left: 15px;
       width: 2px;
       height: 22px;
+      background-color: $DARK_GREY;
+      content: '';
     }
 
     &::before {
@@ -73,9 +74,7 @@ $this: 'c-item' !global;
   }
 
   &__text {
-    font: {
-      size: 18px;
-      family: $font-regular;
-    }
+    font-family: $FONT_REGULAR;
+    font-size: 18px;
   }
 }
