@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Heading from './components/Heading'
-import Item, { ItemArray } from './components/Item'
+import Item from './components/Item'
+import { ItemArray } from './types'
 import Input from './components/Input'
 
 const App = (): JSX.Element => {

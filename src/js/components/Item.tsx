@@ -1,9 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react'
-
-export type ItemArray = {
-  text: string
-  completed: boolean
-}
+import { ItemArray } from '../types'
 
 export type ItemProps = {
   item: ItemArray

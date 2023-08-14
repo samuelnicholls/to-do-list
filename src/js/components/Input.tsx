@@ -1,9 +1,5 @@
-import React, { Dispatch, FC, SetStateAction } from 'react'
-
-export type ItemArray = {
-  text: string
-  completed: boolean
-}
+import React, { ChangeEvent, Dispatch, FC, SetStateAction, SyntheticEvent } from 'react'
+import { ItemArray } from '../types'
 
 export type InputProps = {
   value: string
@@ -17,16 +13,14 @@ const Input: FC<InputProps> = ({ value, items, setValue, setItems }) => {
     setItems([...items, { "text": text, completed: false}])
   }
 
-  // TODO: Remove any type
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault()
     if (!value) return
     addItem(value)
     setValue('')
   }
 
-  // TODO: Remove any type
-  const onChange = (event: any) => {
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)
   }
 
