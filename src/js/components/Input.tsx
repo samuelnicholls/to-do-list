@@ -14,10 +14,7 @@ export type InputProps = {
 
 const Input: FC<InputProps> = ({ value, items, setValue, setItems }) => {
   const addItem = (text: string) => {
-    // TODO: Remove any type
-    const newItems = [...items, { text }] as any;
-    console.log("newItems", newItems)
-    setItems(newItems)
+    setItems([...items, { "text": text, completed: false}])
   }
 
   // TODO: Remove any type
