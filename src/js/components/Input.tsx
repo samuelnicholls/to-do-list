@@ -1,4 +1,10 @@
-import React, { ChangeEvent, Dispatch, FC, SetStateAction, SyntheticEvent } from 'react'
+import React, {
+  ChangeEvent,
+  Dispatch,
+  FC,
+  SetStateAction,
+  SyntheticEvent,
+} from 'react'
 import { ItemArray } from '../types'
 
 export type InputProps = {
@@ -10,7 +16,7 @@ export type InputProps = {
 
 const Input: FC<InputProps> = ({ value, items, setValue, setItems }) => {
   const addItem = (text: string) => {
-    setItems([...items, { "text": text, completed: false}])
+    setItems([...items, { text, completed: false }])
   }
 
   const handleSubmit = (event: SyntheticEvent) => {
