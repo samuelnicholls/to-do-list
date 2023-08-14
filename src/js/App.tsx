@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Heading from '../components/Heading'
-import Item, { ItemArray } from '../components/Item'
-import Input from '../components/Input'
+import Heading from './components/Heading'
+import Item, { ItemArray } from './components/Item'
+import Input from './components/Input'
 
 const App = (): JSX.Element => {
   const [value, setValue] = useState<string>('')

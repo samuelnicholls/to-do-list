@@ -13,7 +13,6 @@
     "prettier": "^2.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.1",
     "stylelint": "^13.6.0",
     "stylelint-config-recommended": "^3.0.0",
