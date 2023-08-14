@@ -1,38 +1,35 @@
-import React from 'react'
+import React, { Dispatch, FC, SetStateAction } from 'react'
 
-export interface ItemArray {
+export type ItemArray = {
   text: string
   completed: boolean
 }
 
-export interface InputProps {
+export type InputProps = {
   value: string
   items: Array<ItemArray>
-  setValue: React.Dispatch<React.SetStateAction<string>>
-  setItems: React.Dispatch<React.SetStateAction<ItemArray[]>>
+  setValue: Dispatch<SetStateAction<string>>
+  setItems: Dispatch<SetStateAction<ItemArray[]>>
 }
 
-const Input = ({ value, items, setValue, setItems }: InputProps) => {
+const Input: FC<InputProps> = ({ value, items, setValue, setItems }) => {
   const addItem = (text: string) => {
-    // Spreading the current state and adding the new value in
-    const newItems = [...items, { text }] as []
-    // Setting the item state to the newItems
+    // TODO: Remove any type
+    const newItems = [...items, { text }] as any;
+    console.log("newItems", newItems)
     setItems(newItems)
   }
 
+  // TODO: Remove any type
   const handleSubmit = (event: any) => {
-    // Preventing the default action of a button
     event.preventDefault()
-    // If there is no value on submit then don't do anything
     if (!value) return
-    // Calling the addItem function and passing it the value from the input
     addItem(value)
-    // Resetting the input field to just an empty string
     setValue('')
   }
 
+  // TODO: Remove any type
   const onChange = (event: any) => {
-    // Set the value state to whatever the user has typed
     setValue(event.target.value)
   }
 

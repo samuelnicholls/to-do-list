@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-export interface HeadingProps {
+export type HeadingProps = {
   title: string
 }
 
-const Heading = ({ title }: HeadingProps) => {
+const Heading: FC<HeadingProps> = ({ title }) => {
   return (
     <div className='c-heading'>
       <h1 className='c-heading__text'>{title}</h1>

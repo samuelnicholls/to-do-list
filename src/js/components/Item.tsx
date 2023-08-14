@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 
-export interface ItemArray {
+export type ItemArray = {
   text: string
   completed: boolean
 }
 
-export interface ItemProps {
+export type ItemProps = {
   item: ItemArray
   items: Array<ItemArray>
   index: number
-  setItems: React.Dispatch<React.SetStateAction<ItemArray[]>>
+  setItems: Dispatch<SetStateAction<ItemArray[]>>
 }
 
 const Item = ({ item, index, items, setItems }: ItemProps) => {
