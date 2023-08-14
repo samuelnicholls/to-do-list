@@ -20,6 +20,7 @@ const Item: FC<ItemProps> = ({ item, index, items, setItems }) => {
     setItems(updatedItemsState)
   }
 
+  // TODO: Refactor and remove any type
   const removeItem = (index: number) => (event: any) => {
     const newItems = [...items]
     newItems.splice(index, 1)
