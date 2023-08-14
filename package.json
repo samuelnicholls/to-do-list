@@ -1,9 +1,10 @@
 {
-  "homepage": "https://thesamnicholls.github.io/to-do-list/",
+  "homepage": "https://samuelnicholls.github.io/to-do-list/",
   "name": "to-do-list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/node": "18.15.5",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
