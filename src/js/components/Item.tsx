@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, FC, SetStateAction } from 'react'
 import { ItemArray } from '../types'
 
 export type ItemProps = {
@@ -8,37 +8,27 @@ export type ItemProps = {
   setItems: Dispatch<SetStateAction<ItemArray[]>>
 }
 
-const Item = ({ item, index, items, setItems }: ItemProps) => {
-  const completeItem = (index: number) => (event: any) => {
-    // Spreading the current items state
-    const newItems = [...items]
+const Item: FC<ItemProps> = ({ item, index, items, setItems }) => {
+  const completeItem = (itemIndex: number) => {
+    const updatedItemsState = items.map((item, index) => {
+      if (index === itemIndex) {
+        return {...item, completed: item.completed === false ? true : false};
+      }
+      return item;
+    });
 
-    // If the item has the completed field set to true
-    if (item.completed === true) {
-      // Only get the one value based on the index passed and set the completed field to false
-      newItems[index].completed = false
-      // Set the items state based on the new changes
-      setItems(newItems)
-    } else {
-      // Only get the one value based on the index passed and set the completed field to true
-      newItems[index].completed = true
-      // Set the items state based on the new changes
-      setItems(newItems)
-    }
+    setItems(updatedItemsState)
   }
 
   const removeItem = (index: number) => (event: any) => {
-    // Spreading the current items state
     const newItems = [...items]
-    // Only get the one value based on the index passed through
     newItems.splice(index, 1)
-    // Set the items state based on the new changes
     setItems(newItems)
   }
 
   return (
     <div className={item.completed ? 'c-item--completed' : 'c-item'}>
-      <button className='c-item__circle' onClick={completeItem(index)} />
+      <button className='c-item__circle' onClick={() => completeItem(index)} />
       <p className='c-item__text'>{item.text}</p>
       <button className='c-item__cross' onClick={removeItem(index)} />
     </div>
